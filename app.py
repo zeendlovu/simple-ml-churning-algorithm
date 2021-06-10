@@ -40,9 +40,9 @@ def hello():
         inverted = label_encoder.inverse_transform(interger_encoded)
         value = int(inverted)
         if value == 0:
-            value = 'Will not result in Churn'
+            return 'Will not result in Churn'
         else:
-            value= 'Results in Churn'
+            return 'Results in Churn'
          
     return render_template('index.html', value=value)
 
