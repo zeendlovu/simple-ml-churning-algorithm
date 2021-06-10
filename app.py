@@ -44,7 +44,7 @@ def hello():
         else:
             s='Yes'
          
-    return render_template('index.html', value=s)
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
