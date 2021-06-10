@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1 style="color: bisque;">Predicting Customer Churn in the Telecommunication field</h1>
+    <p style="color: aqua;">N.B. FILL IN ALL FIELDS</p>
+
+<div id="section" class="sect">
+    <form action = "/" method="POST">
+        <h3>gender</h3> 
+
+        <label class="radio">
+            <input type="radio" id='1' name="gender" value='1' class="radio_input"> 
+            <span></span>
+            Male
+        </label>
+        <label class="radio">
+            <input type="radio" id=0 name="gender" value=0>
+            <span></span>
+            Female
+        </label>
+        
+        <h3>SeniorCitizen</h3>  
+
+        <label class="radio">
+            <input type="radio" id='1' name="SeniorCitizen" value='1'>
+            <span></span>
+            Yes    
+        </label>
+        <label class="radio">
+            <input type="radio" id=0 name="SeniorCitizen" value=0>
+            <span></span>
+            No
+        </label> 
+
+        <h3>Partner</h3>   
+        <label class="radio">
+            <input type="radio" id='1' name="Partner" value='1'>
+            <span></span>
+            Yes
+        </label>  
+        <label class="radio">
+            <input type="radio" id=0 name="Partner" value=0>
+            <span></span>
+            No
+        </label>
+        
+        <h3>Dependents</h3>   
+        <label class="radio">
+            <input type="radio" id='1' name="Dependents" value='1'>
+            <span></span>
+            Yes
+        </label>
+        <label class="radio">
+            <input type="radio" id=0 name="Dependents" value=0>
+            <span></span>
+            No
+        </label>
+          
+        <h3>tenure</h3>
+        <input type="number" name="tenure" placeholder="tenure" id="enter"><br>
+
+        <h3>PhoneService</h3>   
+        <label class="radio">
+            <input type="radio" id='1' name="PhoneService" value='1'>
+            <span></span>
+            Yes
+        </label>
+        <label class="radio">
+            <input type="radio" id=0 name="PhoneService" value=0>
+            <span></span>
+            No
+        </label>
+        
+        <h3>MultipleLines</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="MultipleLines" value='1'> 
+            <span></span>
+            No Phone Service</label>
+        <label class="radio">
+            <input type="radio" id='2' name="MultipleLines" value='2'>
+            <span></span>
+            Yes
+        </label> 
+        <label class="radio">
+            <input type="radio" id=0 name="MultipleLines" value=0>
+            <span></span>
+            No
+        </label>
+        
+        <h3>InternetService</h3>
+        <label class="radio">
+            <input type="radio" id='0' name="InternetService" value='0'> 
+            <span></span>
+            DSL</label>
+        <label class="radio">
+            <input type="radio" id='1' name="InternetService" value='1'>
+            <span></span>
+            Fibre Optic</label>
+        <label class="radio">
+            <input type="radio" id=2 name="InternetService" value=2>
+            <span></span>
+            No</label>
+        
+        <h3>OnlineSecurity</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="OnlineSecurity" value='1'> 
+            <span></span>
+            No internet service</label>
+        <label class="radio">
+           <input type="radio" id='2' name="OnlineSecurity" value='2'> 
+           <span></span>
+           Yes
+        </label>
+        <label class="radio">
+            <input type="radio" id=0 name="OnlineSecurity" value=0>
+            <span></span>
+            No</label>
+        
+        <h3>OnlineBackup</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="OnlineBackup" value='1'> 
+            <span></span>
+            No internet service</label>
+        <label class="radio">
+            <input type="radio" id='2' name="OnlineBackup" value='2'>
+            <span></span>
+            Yes</label>
+        <label class="radio">
+            <input type="radio" id=0 name="OnlineBackup" value=0>
+            <span></span>
+            No</label>
+        
+        <h3>DeviceProtection</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="DeviceProtection" value='1'> 
+            <span></span>
+            No internet service</label>
+        <label class="radio">
+            <input type="radio" id='2' name="DeviceProtection" value='2'>
+            <span></span>
+            Yes</label>
+        <label class="radio">
+            <input type="radio" id=0 name="DeviceProtection" value=0>
+            <span></span>
+            No</label>
+        
+
+        <h3>TechSupport</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="TechSupport" value='1'> 
+            <span></span>
+            No internet service</label>
+        
+        <label class="radio">
+            <input type="radio" id='2' name="TechSupport" value='2'>
+            <span></span>
+            Yes</label>
+        <label class="radio">
+            <input type="radio" id=0 name="TechSupport" value=0>
+            <span></span>
+            No</label>
+        
+        <h3>StreamingTV</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="StreamingTV" value='1'> 
+            <span></span>
+            No internet service</label>
+        
+        <label class="radio">
+            <input type="radio" id='2' name="StreamingTV" value='2'>
+            <span></span>
+            Yes</label>
+        <label class="radio">
+            <input type="radio" id=0 name="StreamingTV" value=0>
+            <span></span>
+            No</label>
+        
+
+        <h3>StreamingMovies</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="StreamingMovies" value='1'>
+            <span></span>
+            No internet service</label>
+        <label class="radio">
+            <input type="radio" id='2' name="StreamingMovies" value='2'>
+            <span></span>
+            Yes</label>
+        <label class="radio">
+            <input type="radio" id=0 name="StreamingMovies" value=0>
+            <span></span>
+            No</label>
+        
+        <h3>Contract</h3>
+        <label class="radio">
+            <input type="radio" id='0' name="Contract" value='0'> 
+            <span></span>
+            Month-to-month</label>
+        
+        <label class="radio">
+             <input type="radio" id='1' name="Contract" value='1'>
+             <span></span>
+            One year</label>
+       
+        <label class="radio">
+            <input type="radio" id=2 name="Contract" value=2>
+            <span></span>
+            Two year</label>
+        
+
+        <h3>PaperlessBilling</h3>
+        <label class="radio">
+            <input type="radio" id='1' name="PaperlessBilling" value='1'> 
+            <span></span>
+            Yes</label>
+        
+        <label class="radio">
+            <input type="radio" id='0' name="PaperlessBilling" value='0'>
+            <span></span>
+            No</label>
+        
+
+        <h3>PaymentMethod</h3>
+        <label class="radio">
+            <input type="radio" id='2' name="PaymentMethod" value='2'> 
+            <span></span>
+            Electronic check</label>
+        <label class="radio">
+            <input type="radio" id='3' name="PaymentMethod" value='3'>
+            <span></span>
+            Mailed check</label>
+        
+        <label class="radio">
+            <input type="radio" id=0 name="PaymentMethod" value=0>
+            <span></span>
+            Bank transfer (automatic)</label>
+        
+        <label class="radio">
+            <input type="radio" id=1 name="PaymentMethod" value=1>
+            <span></span>
+            Credit card (automatic))</label>
+        
+
+        <h3>MonthlyCharges</h3>
+        <input type="number" name="MonthlyCharges" placeholder="MonthlyCharges" id="enter"><br>
+
+        <h3>TotalCharges</h3>
+        <input type="number" name="TotalCharges" placeholder="TotalCharges" id="enter"><br>
+
+        <input type="submit" value="Predict" id="submit_btn" onclick="popup()">
+    </form>
+    <script>
+        function popup() {
+          alert("{{ value }}");
+        }
+    </script>
+        
+    
+    
+</div>   
+</body>
+</html>
