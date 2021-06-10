@@ -38,13 +38,15 @@ def hello():
         prediction = model.mp.predict([array1])
         interger_encoded = label_encoder.fit_transform(prediction)
         inverted = label_encoder.inverse_transform(interger_encoded)
-        value = int(inverted)
-        if value == 0:
-            return 'Will not result in Churn'
-        else:
-            return 'Results in Churn'
+    value = int(inverted)
+    if value == 0:
+        s='No'
+        print('No')
+    else:
+        s='Yes'
+        print('Yes')
          
-    return render_template('index.html', value=value)
+    return render_template('index.html', value=s)
 
 if __name__ == "__main__":
     app.run(debug=True)
